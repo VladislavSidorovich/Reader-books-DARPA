@@ -1207,7 +1207,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
             results.slice(0, 2).forEach(result => {
                 let resultEl = document.createElement("div");
                 resultEl.className = "search-result";
-                let excerpt = result.excerpt.trim().replace(/^(\.\.\.|\s)+/, '');
+                let excerpt = result.excerpt.trim(); // Убедитесь, что текст без усечения
 
                 resultEl.innerHTML = `
                     <a href="${result.cfi}" class="result-link">${excerpt}</a>
