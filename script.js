@@ -1209,7 +1209,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
                 resultEl.className = "search-result";
                 
                 let excerpt = result.excerpt.trim();
-                let additionalText = "В XIII веке Роджер Бэкон (род. около 1214 - 1292)"; // Добавьте ваш текст
+                let additionalText = " В XIII веке Роджер Бэкон (род. около 1214 - 1292)"; // Добавьте ваш текст
 
                 resultEl.innerHTML = `
                     <a href="${result.cfi}" class="result-link">${excerpt}${additionalText}</a>
@@ -1313,7 +1313,7 @@ App.prototype.onSearchClick7 = function (searchTerm) {
                 resultEl.className = "search-result";
                 
                 let excerpt = result.excerpt.trim();
-                let additionalText = "Несоотносимости"; // Добавьте ваш текст
+                let additionalText = " Несоотносимости"; // Добавьте ваш текст
 
                 resultEl.innerHTML = `
                     <a href="${result.cfi}" class="result-link">${excerpt}${additionalText}</a>
