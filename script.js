@@ -1204,7 +1204,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
             const container = this.qs(".setting-content2");
             container.innerHTML = ""; // Очистка контейнера
 
-            results.slice(0, 4).forEach(result => {
+            results.slice(0, 6).forEach(result => {
                 let resultEl = document.createElement("div");
                 resultEl.className = "search-result";
                 let excerpt = result.excerpt.trim().replace(/^(\.\.\.|\s)+/, '');
@@ -1307,7 +1307,7 @@ App.prototype.onSearchClick7 = function (searchTerm) {
         const container = this.qs(".setting-content7");
         container.innerHTML = ""; // Очистка контейнера
 
-        results.slice(0, 4).forEach(result => {
+        results.slice(0, 10).forEach(result => {
             let resultEl = document.createElement("div");
             resultEl.className = "search-result";
             let excerpt = result.excerpt.trim().replace(/^(\.\.\.|\s)+/, '');
