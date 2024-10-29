@@ -1209,7 +1209,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
                 resultEl.className = "search-result";
                 
                 let excerpt = result.excerpt.trim();
-                let additionalText = " ваш заданный текст здесь"; // Добавьте ваш текст
+                let additionalText = "В XIII веке Роджер Бэкон (род. около 1214 - 1292)"; // Добавьте ваш текст
 
                 resultEl.innerHTML = `
                     <a href="${result.cfi}" class="result-link">${excerpt}${additionalText}</a>
@@ -1302,25 +1302,30 @@ App.prototype.onSearchClick6 = function (searchTerm) {
     }).catch(err => this.fatal("error searching book", err));
 };
 
-
-
 App.prototype.onSearchClick7 = function (searchTerm) {
-    this.doSearch7(searchTerm).then(results => {
-        const container = this.qs(".setting-content7");
-        container.innerHTML = ""; // Очистка контейнера
+    this.doSearch2(searchTerm)
+        .then(results => {
+            const container = this.qs(".setting-content7");
+            container.innerHTML = ""; // Очистка контейнера
 
-        results.slice(0, 10).forEach(result => {
-            let resultEl = document.createElement("div");
-            resultEl.className = "search-result";
-            let excerpt = result.excerpt.trim().replace(/^(\.\.\.|\s)+/, '');
+            results.slice(0, 2).forEach(result => {
+                let resultEl = document.createElement("div");
+                resultEl.className = "search-result";
+                
+                let excerpt = result.excerpt.trim();
+                let additionalText = "Несоотносимости"; // Добавьте ваш текст
 
-            resultEl.innerHTML = `
-                <a href="${result.cfi}" class="result-link">${excerpt}</a>
-            `;
-            resultEl.querySelector(".result-link").addEventListener("click", this.onResultClick.bind(this, result.cfi));
-            container.appendChild(resultEl);
+                resultEl.innerHTML = `
+                    <a href="${result.cfi}" class="result-link">${excerpt}${additionalText}</a>
+                `;
+                resultEl.querySelector(".result-link").addEventListener("click", this.onResultClick.bind(this, result.cfi));
+                container.appendChild(resultEl);
+            });
+        })
+        .catch(err => {
+            console.error("Error searching book", err);
+            this.fatal("error searching book", err);
         });
-    }).catch(err => this.fatal("error searching book", err));
 };
 
 App.prototype.onSearchClick8 = function (searchTerm) {
