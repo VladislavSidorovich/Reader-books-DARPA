@@ -1198,7 +1198,7 @@ App.prototype.onSearchClick1 = function (searchTerm) {
         });
 };
 
-App.prototype.onSearchClick2 = function (searchTerm) {
+/*App.prototype.onSearchClick2 = function (searchTerm) {
     this.doSearch2(searchTerm)
         .then(results => {
             const container = this.qs(".setting-content2");
@@ -1220,7 +1220,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
             console.error("Error searching book", err);
             this.fatal("error searching book", err);
         });
-};
+};*/
 
 App.prototype.onSearchClick3 = function (searchTerm) {
     this.doSearch3(searchTerm).then(results => {
