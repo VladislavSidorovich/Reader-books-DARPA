@@ -1202,7 +1202,7 @@ App.prototype.onSearchClick2 = function (searchTerm) {
     this.doSearch2(searchTerm)
         .then(results => {
             const container = this.qs(".setting-content2");
-            container.innerHTML = ""; // Очистка контейнера
+            container.innerHTML = "."; // Очистка контейнера
 
             results.slice(0, 2).forEach(result => {
                 let resultEl = document.createElement("div");
