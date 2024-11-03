@@ -1202,14 +1202,14 @@ App.prototype.onSearchClick2 = function (searchTerm) {
     this.doSearch2(searchTerm)
         .then(results => {
             const container = this.qs(".setting-content2");
-            container.innerHTML = "."; // Очистка контейнера
+            container.innerHTML = ""; // Очистка контейнера
 
             results.slice(0, 2).forEach(result => {
                 let resultEl = document.createElement("div");
                 resultEl.className = "search-result";
                 
                 let excerpt = result.excerpt.trim();
-                   let additionalText = ""; 
+                   let additionalText = "В XIII веке Роджер Бэкон (род. около 1214 - 1292) открыл войну за свободу мысли."; 
 
                 resultEl.innerHTML = `
                     <a href="${result.cfi}" class="result-link">${excerpt}${additionalText}</a>
